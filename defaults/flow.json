@@ -5,6 +5,11 @@
         "label": "Reverse"
     },
     {
+        "id": "f934d9a6.3af418",
+        "type": "tab",
+        "label": "Help"
+    },
+    {
         "id": "8b671fd.85c5ae",
         "type": "http in",
         "z": "d012947c.2f2238",
@@ -43,6 +48,47 @@
         "name": "HTTP response",
         "x": 753.5,
         "y": 151,
+        "wires": []
+    },
+    {
+        "id": "2309b496.aaf98c",
+        "type": "http in",
+        "z": "f934d9a6.3af418",
+        "name": "HTTP Request GET /help",
+        "url": "/help",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 269,
+        "y": 160,
+        "wires": [
+            [
+                "31a51f0a.b5dd3"
+            ]
+        ]
+    },
+    {
+        "id": "31a51f0a.b5dd3",
+        "type": "function",
+        "z": "f934d9a6.3af418",
+        "name": "Help Command",
+        "func": "var outputArray = [];\noutputArray.push(\"reverse <ANY_TEXT> - Return the reverse of inputted text\");\n\nmsg.payload = JSON.stringify(outputArray);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 528.5,
+        "y": 161,
+        "wires": [
+            [
+                "60b11f1.d5befe"
+            ]
+        ]
+    },
+    {
+        "id": "60b11f1.d5befe",
+        "type": "http response",
+        "z": "f934d9a6.3af418",
+        "name": "",
+        "x": 762.5,
+        "y": 160,
         "wires": []
     }
 ]
