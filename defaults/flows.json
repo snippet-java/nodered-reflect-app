@@ -1,0 +1,48 @@
+[
+    {
+        "id": "d012947c.2f2238",
+        "type": "tab",
+        "label": "Reverse"
+    },
+    {
+        "id": "8b671fd.85c5ae",
+        "type": "http in",
+        "z": "d012947c.2f2238",
+        "name": "HTTP Request GET /reverse",
+        "url": "/reverse",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 233,
+        "y": 153,
+        "wires": [
+            [
+                "1849d448.4f42bc"
+            ]
+        ]
+    },
+    {
+        "id": "1849d448.4f42bc",
+        "type": "function",
+        "z": "d012947c.2f2238",
+        "name": "Create a response",
+        "func": "var text = msg.payload.text;\nmsg.payload = text.split(\"\").reverse().join(\"\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 499.5,
+        "y": 155,
+        "wires": [
+            [
+                "8e193905.2e3388"
+            ]
+        ]
+    },
+    {
+        "id": "8e193905.2e3388",
+        "type": "http response",
+        "z": "d012947c.2f2238",
+        "name": "HTTP response",
+        "x": 753.5,
+        "y": 151,
+        "wires": []
+    }
+]
