@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: nodered-reflect-app
+  host: nodered-reflect-app
+  disk_quota: 1024M
+  services:
+  - nodered-reflect-app-cloudantNoSQLDB
