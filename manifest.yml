@@ -8,3 +8,5 @@ applications:
   disk_quota: 1024M
   services:
   - nodered-reflect-app-cloudantNoSQLDB
+  env:
+    NODE_RED_STORAGE_NAME: nodered-reflect-app-cloudantNoSQLDB
